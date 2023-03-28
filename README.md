@@ -1,6 +1,13 @@
 # admin
 
+## 前端项目
+
++ [社区核酸信息管理系统后端项目server](https://github.com/Mayonnaise-Sann/nucleic-acid-manage-server)
+
+
+
 ## Project setup
+
 ```
 npm install
 ```
