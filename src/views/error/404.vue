@@ -6,7 +6,7 @@
       </div>
       <div class="tip">
         <h4>抱歉，您访问的页面不存在</h4>
-        <h5><router-link to="home" class="go-home">返回首页</router-link></h5>
+        <h5><router-link to="/home" class="go-home">返回首页</router-link></h5>
       </div>
     </div>
   </div>

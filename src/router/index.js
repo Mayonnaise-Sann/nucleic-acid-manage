@@ -17,96 +17,95 @@ const routes = [
   },
 
   {
-    path: "/home",
-    name: "首页",
+    path: "/",
+    redirect: "/home",
     subItem: true,
     icon: "House",
     component: () => import("../components/Main.vue"),
     children: [
       {
         path: "/home",
-        name: "",
+        name: "首页",
+        icon: "Home",
+        subItem: true,
         component: () => import("../views/Home/Home.vue"),
       },
-    ],
-  },
-  {
-    path: "/resident",
-    name: "居民管理",
-    redirect: "/resident/residentList",
-    icon: "User",
-    component: () => import("../components/Main.vue"),
+      // -----
 
-    children: [
       {
-        path: "/resident/residentList",
-        name: "居民信息",
-        component: () => import("../views/resident/Resident.vue"),
+        path: "/resident",
+        name: "居民管理",
+        redirect: "/resident/residentList",
+        icon: "User",
+
+        children: [
+          {
+            path: "residentList",
+            name: "居民信息",
+            component: () => import("../views/resident/Resident.vue"),
+          },
+        ],
       },
-    ],
-  },
-  {
-    path: "/street",
-    name: "街道管理",
-    component: () => import("../components/Main.vue"),
-    icon: "Location",
-
-    children: [
       {
-        path: "/street/streetList",
-        name: "街道信息",
-        component: () => import("../views/street/Street.vue"),
+        path: "/street",
+        name: "街道管理",
+        redirect: "/street/streetList",
+        icon: "Location",
+
+        children: [
+          {
+            path: "streetList",
+            name: "街道信息",
+            component: () => import("../views/street/Street.vue"),
+          },
+        ],
       },
-    ],
-  },
-  {
-    path: "/testinstitution",
-    name: "检测机构管理",
-    component: () => import("../components/Main.vue"),
-    icon: "OfficeBuilding",
-
-    children: [
       {
-        path: "/testinstitution/testinstitutionList",
+        path: "/testinstitution",
         name: "检测机构管理",
-        component: () => import("../views/testInstitution/TestInstitution"),
-      },
-    ],
-  },
-  {
-    path: "/sampleinstitution",
-    name: "采样点管理",
-    component: () => import("../components/Main.vue"),
-    icon: "OfficeBuilding",
+        redirect: "/testinstitution/testinstitutionList",
+        icon: "OfficeBuilding",
 
-    children: [
+        children: [
+          {
+            path: "testinstitutionList",
+            name: "检测机构管理",
+            component: () => import("../views/testInstitution/TestInstitution"),
+          },
+        ],
+      },
       {
-        path: "/sampleinstitution/sampleinstitutionList",
+        path: "/sampleinstitution",
         name: "采样点管理",
-        component: () => import("../views/sampleInstitution/SampleInstitution"),
-      },
-    ],
-  },
-  {
-    path: "/nucleicacid",
-    name: "核酸信息管理",
-    component: () => import("../components/Main.vue"),
-    icon: "Document",
+        redirect: "/sampleinstitution/sampleinstitutionList",
+        icon: "OfficeBuilding",
 
-    children: [
+        children: [
+          {
+            path: "sampleinstitutionList",
+            name: "采样点管理",
+            component: () =>
+              import("../views/sampleInstitution/SampleInstitution"),
+          },
+        ],
+      },
       {
-        path: "/nucleicacid/nucleicacidList",
-        name: "居民核酸信息",
-        component: () => import("../views/nucleicacid/NucleicAcid.vue"),
+        path: "/nucleicacid",
+        name: "核酸信息管理",
+        redirect: "/nucleicacid/nucleicacidList",
+        icon: "Document",
+
+        children: [
+          {
+            path: "nucleicacidList",
+            name: "居民核酸信息",
+            component: () => import("../views/nucleicacid/NucleicAcid.vue"),
+          },
+        ],
       },
     ],
   },
 
-//   {
-//       path: '404',
-//       name: '404',
-
-//   },
   {
     path: "/",
     name: "/",
